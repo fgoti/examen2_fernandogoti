@@ -5,17 +5,14 @@
  */
 package examen2_fernandogoti;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Fernando Goti
  */
-public class Examen2_fernandogoti {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-    }
-    
+public class Canciones {
+    private String Nombre_cancion;
+    private String Artista_cancion;
+    private int duracion;
 }
