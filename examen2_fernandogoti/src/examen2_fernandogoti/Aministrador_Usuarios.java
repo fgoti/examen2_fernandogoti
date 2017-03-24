@@ -18,8 +18,7 @@ import java.util.ArrayList;
  * @author Fernando Goti
  */
 public class Aministrador_Usuarios {
-
-    private ArrayList<Usuarios> L_Usuarios = new ArrayList();
+   ArrayList<Usuarios> L_Usuarios = new ArrayList();
     File archivo = null;
 
     public Aministrador_Usuarios(String path) {
