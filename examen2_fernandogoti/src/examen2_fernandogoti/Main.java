@@ -5,6 +5,9 @@
  */
 package examen2_fernandogoti;
 
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Fernando Goti
@@ -16,6 +19,7 @@ public class Main extends javax.swing.JFrame {
      */
     public Main() {
         initComponents();
+
     }
 
     /**
@@ -27,8 +31,6 @@ public class Main extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Crear_Playlist = new javax.swing.JDialog();
-        Explorar = new javax.swing.JDialog();
         Crear_Usuarios = new javax.swing.JDialog();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -39,40 +41,37 @@ public class Main extends javax.swing.JFrame {
         tex_user_cuenta = new javax.swing.JTextField();
         tex_password_cuenta = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        bguardar_cuenta = new javax.swing.JButton();
+        crear_Canciones = new javax.swing.JDialog();
+        jLabel7 = new javax.swing.JLabel();
+        tex_nombre_canciones = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        tex_artistas_canciones = new javax.swing.JTextField();
+        tex_duracion_canciones = new javax.swing.JTextField();
+        tex_genero_cancion = new javax.swing.JTextField();
+        bguardar_cancion = new javax.swing.JButton();
+        Crear_Playlist = new javax.swing.JDialog();
+        jLabel6 = new javax.swing.JLabel();
+        tex_nombreplaylist = new javax.swing.JTextField();
+        guardar_playlist = new javax.swing.JButton();
+        Explorar = new javax.swing.JDialog();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         Ver_Playlist = new javax.swing.JDialog();
         Ver_favoritos = new javax.swing.JDialog();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
-        jMenuItem5 = new javax.swing.JMenuItem();
-        jMenuItem6 = new javax.swing.JMenuItem();
+        menu_crearcuenta = new javax.swing.JMenuItem();
+        menu_crearcancion = new javax.swing.JMenuItem();
+        menu_crearplaylist = new javax.swing.JMenuItem();
+        menu_salir = new javax.swing.JMenuItem();
+        menu_explorar = new javax.swing.JMenuItem();
+        menu_verplaylist = new javax.swing.JMenuItem();
+        menu_favoritos = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
-
-        javax.swing.GroupLayout Crear_PlaylistLayout = new javax.swing.GroupLayout(Crear_Playlist.getContentPane());
-        Crear_Playlist.getContentPane().setLayout(Crear_PlaylistLayout);
-        Crear_PlaylistLayout.setHorizontalGroup(
-            Crear_PlaylistLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        Crear_PlaylistLayout.setVerticalGroup(
-            Crear_PlaylistLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout ExplorarLayout = new javax.swing.GroupLayout(Explorar.getContentPane());
-        Explorar.getContentPane().setLayout(ExplorarLayout);
-        ExplorarLayout.setHorizontalGroup(
-            ExplorarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        ExplorarLayout.setVerticalGroup(
-            ExplorarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
 
         jLabel1.setText("Nombre:");
 
@@ -84,10 +83,10 @@ public class Main extends javax.swing.JFrame {
 
         jLabel5.setText("Crear Cuenta");
 
-        jButton1.setText("Guardar");
-        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+        bguardar_cuenta.setText("Guardar");
+        bguardar_cuenta.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton1MouseClicked(evt);
+                bguardar_cuentaMouseClicked(evt);
             }
         });
 
@@ -117,7 +116,7 @@ public class Main extends javax.swing.JFrame {
                                     .addComponent(tex_password_cuenta, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(Crear_UsuariosLayout.createSequentialGroup()
                         .addGap(161, 161, 161)
-                        .addComponent(jButton1)))
+                        .addComponent(bguardar_cuenta)))
                 .addContainerGap(165, Short.MAX_VALUE))
         );
         Crear_UsuariosLayout.setVerticalGroup(
@@ -142,8 +141,143 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(jLabel4)
                     .addComponent(tex_password_cuenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(bguardar_cuenta)
                 .addGap(38, 38, 38))
+        );
+
+        jLabel7.setText("Nombre");
+
+        jLabel8.setText("Artista");
+
+        jLabel9.setText("Canciones");
+
+        jLabel10.setText("Duracion");
+
+        jLabel11.setText("Genero");
+
+        bguardar_cancion.setText("Guardar");
+        bguardar_cancion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bguardar_cancionMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout crear_CancionesLayout = new javax.swing.GroupLayout(crear_Canciones.getContentPane());
+        crear_Canciones.getContentPane().setLayout(crear_CancionesLayout);
+        crear_CancionesLayout.setHorizontalGroup(
+            crear_CancionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(crear_CancionesLayout.createSequentialGroup()
+                .addGroup(crear_CancionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(crear_CancionesLayout.createSequentialGroup()
+                        .addGap(81, 81, 81)
+                        .addComponent(jLabel7))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, crear_CancionesLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(crear_CancionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING))))
+                .addGap(51, 51, 51)
+                .addGroup(crear_CancionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(bguardar_cancion)
+                    .addComponent(tex_genero_cancion, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tex_nombre_canciones, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel9)
+                    .addComponent(tex_artistas_canciones, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tex_duracion_canciones, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(154, Short.MAX_VALUE))
+        );
+        crear_CancionesLayout.setVerticalGroup(
+            crear_CancionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(crear_CancionesLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jLabel9)
+                .addGap(18, 18, 18)
+                .addGroup(crear_CancionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(tex_nombre_canciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(31, 31, 31)
+                .addGroup(crear_CancionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(tex_artistas_canciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(28, 28, 28)
+                .addGroup(crear_CancionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10)
+                    .addComponent(tex_duracion_canciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(43, 43, 43)
+                .addGroup(crear_CancionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel11)
+                    .addComponent(tex_genero_cancion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(bguardar_cancion)
+                .addContainerGap(26, Short.MAX_VALUE))
+        );
+
+        jLabel6.setText("Nombre de playlist");
+
+        guardar_playlist.setText("Guardar Playlist");
+        guardar_playlist.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                guardar_playlistMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout Crear_PlaylistLayout = new javax.swing.GroupLayout(Crear_Playlist.getContentPane());
+        Crear_Playlist.getContentPane().setLayout(Crear_PlaylistLayout);
+        Crear_PlaylistLayout.setHorizontalGroup(
+            Crear_PlaylistLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Crear_PlaylistLayout.createSequentialGroup()
+                .addGroup(Crear_PlaylistLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Crear_PlaylistLayout.createSequentialGroup()
+                        .addGap(96, 96, 96)
+                        .addComponent(jLabel6)
+                        .addGap(27, 27, 27)
+                        .addComponent(tex_nombreplaylist, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(Crear_PlaylistLayout.createSequentialGroup()
+                        .addGap(141, 141, 141)
+                        .addComponent(guardar_playlist)))
+                .addContainerGap(104, Short.MAX_VALUE))
+        );
+        Crear_PlaylistLayout.setVerticalGroup(
+            Crear_PlaylistLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Crear_PlaylistLayout.createSequentialGroup()
+                .addGap(44, 44, 44)
+                .addGroup(Crear_PlaylistLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(tex_nombreplaylist, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 129, Short.MAX_VALUE)
+                .addComponent(guardar_playlist)
+                .addGap(83, 83, 83))
+        );
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        javax.swing.GroupLayout ExplorarLayout = new javax.swing.GroupLayout(Explorar.getContentPane());
+        Explorar.getContentPane().setLayout(ExplorarLayout);
+        ExplorarLayout.setHorizontalGroup(
+            ExplorarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ExplorarLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(13, Short.MAX_VALUE))
+        );
+        ExplorarLayout.setVerticalGroup(
+            ExplorarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ExplorarLayout.createSequentialGroup()
+                .addContainerGap(13, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout Ver_PlaylistLayout = new javax.swing.GroupLayout(Ver_Playlist.getContentPane());
@@ -172,29 +306,53 @@ public class Main extends javax.swing.JFrame {
 
         jMenu1.setText("Menu");
 
-        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem1.setText("Explorar");
-        jMenu1.add(jMenuItem1);
+        menu_crearcuenta.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_H, java.awt.event.InputEvent.CTRL_MASK));
+        menu_crearcuenta.setText("crear Usuarios");
+        menu_crearcuenta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menu_crearcuentaActionPerformed(evt);
+            }
+        });
+        jMenu1.add(menu_crearcuenta);
 
-        jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem2.setText("Crear Playlist");
-        jMenu1.add(jMenuItem2);
+        menu_crearcancion.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_J, java.awt.event.InputEvent.CTRL_MASK));
+        menu_crearcancion.setText("Crear Cancion");
+        menu_crearcancion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menu_crearcancionActionPerformed(evt);
+            }
+        });
+        jMenu1.add(menu_crearcancion);
 
-        jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem3.setText("Ver Playlist");
-        jMenu1.add(jMenuItem3);
+        menu_crearplaylist.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
+        menu_crearplaylist.setText("Crear Playlist");
+        menu_crearplaylist.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menu_crearplaylistActionPerformed(evt);
+            }
+        });
+        jMenu1.add(menu_crearplaylist);
 
-        jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem4.setText("Ver Favoritos");
-        jMenu1.add(jMenuItem4);
+        menu_salir.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_G, java.awt.event.InputEvent.CTRL_MASK));
+        menu_salir.setText("Salir");
+        menu_salir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menu_salirActionPerformed(evt);
+            }
+        });
+        jMenu1.add(menu_salir);
 
-        jMenuItem5.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_G, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem5.setText("Salir");
-        jMenu1.add(jMenuItem5);
+        menu_explorar.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_MASK));
+        menu_explorar.setText("Explorar");
+        jMenu1.add(menu_explorar);
 
-        jMenuItem6.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_H, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem6.setText("crear Usuarios");
-        jMenu1.add(jMenuItem6);
+        menu_verplaylist.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.CTRL_MASK));
+        menu_verplaylist.setText("Ver Playlist");
+        jMenu1.add(menu_verplaylist);
+
+        menu_favoritos.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F, java.awt.event.InputEvent.CTRL_MASK));
+        menu_favoritos.setText("Ver Favoritos");
+        jMenu1.add(menu_favoritos);
 
         jMenuBar1.add(jMenu1);
         jMenuBar1.add(jMenu2);
@@ -215,13 +373,73 @@ public class Main extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+    private void bguardar_cuentaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bguardar_cuentaMouseClicked
+
         String nombre_usuario;
         int edad;
         String username;
         String password;
-        String favoritos;
-    }//GEN-LAST:event_jButton1MouseClicked
+        nombre_usuario = tex_nombre_cuenta.getText();
+        edad = Integer.parseInt(tex_edad_cuenta.getText());
+        username = tex_user_cuenta.getText();
+        password = tex_password_cuenta.getText();
+        Usuarios usuarios = new Usuarios(nombre_usuario, edad, username, password);
+        L_usuarios.add(usuarios);
+
+        agregar_archivob = new Aministrador_Usuarios("./Usuario.txt");
+        agregar_archivob.cargarArchivo(); // Poner validación por si el archivo no existe.
+        agregar_archivob.setArchivo(usuarios);
+        agregar_archivob.escribirArchivo();
+
+        tex_nombre_cuenta.setText("");
+        tex_edad_cuenta.setText("");
+        tex_user_cuenta.setText("");
+        tex_password_cuenta.setText("");
+
+    }//GEN-LAST:event_bguardar_cuentaMouseClicked
+
+    private void menu_crearcuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_crearcuentaActionPerformed
+        Crear_Usuarios.setModal(true);
+        Crear_Usuarios.pack(); // sirve para acoplar el tamaño de la ventana a los elementos que contiene
+        Crear_Usuarios.setLocationRelativeTo(this);
+        Crear_Usuarios.setVisible(true);        // TODO add your handling code here:
+    }//GEN-LAST:event_menu_crearcuentaActionPerformed
+
+    private void menu_crearcancionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_crearcancionActionPerformed
+        crear_Canciones.setModal(true);
+        crear_Canciones.pack(); // sirve para acoplar el tamaño de la ventana a los elementos que contiene
+        crear_Canciones.setLocationRelativeTo(this);
+        crear_Canciones.setVisible(true);         crear_Canciones.setVisible(true);         Crear_Usuarios.setVisible(true);       }//GEN-LAST:event_menu_crearcancionActionPerformed
+
+    private void bguardar_cancionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bguardar_cancionMouseClicked
+        String Nombre_cancion = tex_nombre_canciones.getText();
+        String Artista_cancion = tex_artistas_canciones.getText();
+        int duracion = Integer.parseInt(tex_duracion_canciones.getText());
+        L_canaciones.add(new Canciones(Nombre_cancion, Artista_cancion, duracion));
+        JOptionPane.showMessageDialog(this, "Se agrego cancion");
+        tex_nombre_canciones.setText("");
+        tex_artistas_canciones.setText("");
+        tex_duracion_canciones.setText("");
+        tex_genero_cancion.setText("");
+    }//GEN-LAST:event_bguardar_cancionMouseClicked
+
+    private void guardar_playlistMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_guardar_playlistMouseClicked
+        String nombre_playlist = tex_nombreplaylist.getText();
+        tex_nombreplaylist.setText("");
+        L_playlist.add(new Playlist(nombre_playlist));
+    }//GEN-LAST:event_guardar_playlistMouseClicked
+
+    private void menu_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_salirActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_menu_salirActionPerformed
+
+    private void menu_crearplaylistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_crearplaylistActionPerformed
+        Crear_Playlist.setVisible(true);
+        Crear_Usuarios.setModal(true);
+        Crear_Playlist.pack(); // sirve para acoplar el tamaño de la ventana a los elementos que contiene
+        Crear_Playlist.setLocationRelativeTo(this);
+// TODO add your handling code here:
+    }//GEN-LAST:event_menu_crearplaylistActionPerformed
 
     /**
      * @param args the command line arguments
@@ -264,24 +482,47 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JDialog Explorar;
     private javax.swing.JDialog Ver_Playlist;
     private javax.swing.JDialog Ver_favoritos;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton bguardar_cancion;
+    private javax.swing.JButton bguardar_cuenta;
+    private javax.swing.JDialog crear_Canciones;
+    private javax.swing.JButton guardar_playlist;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JMenuItem menu_crearcancion;
+    private javax.swing.JMenuItem menu_crearcuenta;
+    private javax.swing.JMenuItem menu_crearplaylist;
+    private javax.swing.JMenuItem menu_explorar;
+    private javax.swing.JMenuItem menu_favoritos;
+    private javax.swing.JMenuItem menu_salir;
+    private javax.swing.JMenuItem menu_verplaylist;
+    private javax.swing.JTextField tex_artistas_canciones;
+    private javax.swing.JTextField tex_duracion_canciones;
     private javax.swing.JTextField tex_edad_cuenta;
+    private javax.swing.JTextField tex_genero_cancion;
+    private javax.swing.JTextField tex_nombre_canciones;
     private javax.swing.JTextField tex_nombre_cuenta;
+    private javax.swing.JTextField tex_nombreplaylist;
     private javax.swing.JTextField tex_password_cuenta;
     private javax.swing.JTextField tex_user_cuenta;
     // End of variables declaration//GEN-END:variables
+    ArrayList<Usuarios> L_usuarios = new ArrayList();
+    ArrayList<Canciones> L_canaciones = new ArrayList();
+    ArrayList L_playlist = new ArrayList();
+
+    Aministrador_Usuarios agregar_archivob;
+
 }

@@ -5,11 +5,14 @@
  */
 package examen2_fernandogoti;
 
+import java.io.Serializable;
+import java.util.ArrayList;
+
 /**
  *
  * @author Fernando Goti
  */
-public class Usuarios {
+public class Usuarios implements Serializable{
 
     private String nombre_usuario;
     private int edad;
